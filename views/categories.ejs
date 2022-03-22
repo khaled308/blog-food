@@ -1,0 +1,30 @@
+<%- include('./includes/header.ejs') %> 
+<style>
+    a{
+        margin: 0 auto;
+        box-shadow: none;
+    }
+    a img{
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+<%- include('./includes/nav.ejs') %> 
+
+<!-- start categories -->
+<div class="container categories">
+
+        <% allCategories.forEach(category=>{ %>
+            <div class="row py-4">
+                <a href="categories/<%- category.name  %> " class="col-6 text-cente category-link">
+                    <div class="category-img">
+                        <img src="img/<%- category.image  %> " alt="" lazy="loading" >
+                    </div>
+                    <div class="pt-1"><%- category.name  %> </div>
+                </a>
+            </div>
+        <% })%>
+</div><!--End category-->
+
+<%- include('./includes/footer.ejs')  %> 

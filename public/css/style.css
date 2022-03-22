@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+img{
+    max-width: 100%;
+}
+body{
+    min-height: 100vh;
+}
+/* start nav */
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+.btn-outline-success:hover{
+    background-color: var(--bs-primary);
+}
+/* end nav */
+/* start categories */
+.category-link{
+    text-align: center;
+}
+.category-img{
+    box-shadow: 0 3px 6px rgba(0,0,0,16) ;
+}
+/* end categories */

@@ -1,0 +1,43 @@
+const mongoose = require('mongoose')
+const Category = require('../models/category')
+
+
+mongoose.connect('mongodb://localhost:27017/foodBlog')
+
+
+const data = [
+    {
+        "name": "Thai",
+        "image": "thai-food.jpg"
+    },
+    {
+        "name": "American",
+        "image": "american-food.jpg"
+    }, 
+    {
+        "name": "Chinese",
+        "image": "chinese-food.jpg"
+    },
+    {
+        "name": "Mexican",
+        "image": "mexican-food.jpg"
+    }, 
+    {
+        "name": "Indian",
+        "image": "indian-food.jpg"
+    },
+    {
+        "name": "Spanish",
+        "image": "spanish-food.jpg"
+    }
+]
+
+function addDummyData(){
+    data.forEach(async(item)=>{
+        const category = new Category(item)
+        await category.save()
+    })
+    console.log('done')
+}
+
+addDummyData()

@@ -1,0 +1,68 @@
+<%- include('./includes/header.ejs') %> 
+</head>
+<body>
+
+<%- include('./includes/nav.ejs') %> 
+
+<!-- start landing  -->
+<div class="container home-landing pt-5 pb-5">
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <h1 class="display-5 fw-bold mb-3">Huge selection of delicios recipe ideas</h1>
+            <p class="lead">
+                Explore our huge selection of delicious recipe ideas including; easy desserts, delicious vegan and vegetarian dinner ideas, gorgeous pasta recipes, quick bakes, family-friendly meals and gluten-free recipes.
+            </p>
+        </div>
+        <div class="col-12 col-lg-6">
+            <img src="img/hero-image.png" alt="Cooking" loading="lazy" >
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/explore-latest" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Explore Latest</a>
+            <a href="/explore-random" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Show Random</a>
+        </div>
+    </div>
+</div><!-- end landing -->
+
+<!-- start categories -->
+<div class="container categories">
+    <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+
+        <% categories.forEach(category=>{ %>
+            <a href="categories/<%- category.name  %> " class="col text-cente category-link">
+                <div class="category-img">
+                    <img src="img/<%- category.image  %> " alt="" lazy="loading" >
+                </div>
+                <div class="pt-1"><%- category.name  %> </div>
+            </a>
+        <% })%>
+        <a href="/categories" class="col text-center category__link">
+            <div class="category__img shadow">
+                <img src="img/view-all.jpg" alt="View All Categories" loading="lazy">
+            </div>
+            <div class="pt-1">View All</div>
+        </a>
+    </div>
+</div><!--End category-->
+
+<!-- latest start -->
+<div class="container latest pt-5 pb-5">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Latest Recipes</h2>
+        <a href="/explore-latest" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% latestRecipes.forEach(recipe=>{ %> 
+            <a href="/recipe/<%= recipe._id %>" class="col text-center category-link">
+                <div class="category-img">
+                    <img src="img/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+                </div>
+                <div class="pt-1"><%= recipe.name %></div>
+            </a>
+        <% }) %> 
+    </div>
+
+</div><!-- end latest -->
+<!-- submit recipe -->
+<!-- end submit recipe -->
+<%- include('./includes/footer.ejs')  %> 
